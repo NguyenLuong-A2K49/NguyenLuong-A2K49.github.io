@@ -57,7 +57,7 @@ html {
 #header {
     width: 100%;
     position: fixed;
-    height: 46.5px;
+    height: 47px;
     background-color: #000;
     z-index: 1;
 }
@@ -69,6 +69,7 @@ html {
 #nav > li {
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
 
 #nav > li > a {
@@ -80,7 +81,7 @@ html {
 
 #nav li a {
     text-decoration: none;
-    line-height: 46.5px;
+    line-height: 47px;
     display: inline-block;
 }
 
@@ -122,6 +123,10 @@ html {
     line-height: 46.5px;
     font-size: 14px;
     padding: 0px 24px;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 #search-btn:hover {
