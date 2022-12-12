@@ -4,6 +4,7 @@
         <title>The Band</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
         <link rel="stylesheet" href="assets/font/themify-icons/themify-icons.css">
         <link rel="icon" href="/assets/img/member/Nguyen.jpg" type="image/x-icon"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,7 @@
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a href="">
+                        <a>
                             More
                             <i class="down-btn ti-angle-down"></i>
                         </a>
@@ -32,6 +33,10 @@
 
                 <div id="search-btn">
                     <i class="ti-search"></i>
+                </div>
+
+                <div id="mobile-menu" class="mobile-menu">
+                    <i class="ti-menu"></i>
                 </div>
             </div>
 
@@ -212,6 +217,36 @@
             </div>
         </div>
 
+        <!-- js - mobile menu -->
+        <script>
+            var header = document.getElementById('header');
+            var curHeight = header.clientHeight;
+            var mobileMenu = document.getElementById('mobile-menu');
+            // console.log(mobileMenu);
+            var navItemList = document.querySelectorAll('#nav li a[href*="#"]');
+            console.log(navItemList);
+            
+            mobileMenu.onclick = function() {
+                var isClose = header.clientHeight === curHeight;
+                if (isClose)
+                    header.style.height = 'auto';
+                else
+                    header.style.height = null;
+            };
+
+            for (var navItem of navItemList) {
+                navItem.addEventListener('click', function() {
+                    header.style.height = null;
+                });
+            }
+        </script>
+
+        <!-- js - mobile subnav -->
+        <script>
+            
+        </script>
+
+        <!-- js - modal -->
         <script>
             const buyticList = document.querySelectorAll('.js-buy-tic');
             const modal = document.querySelector('.js-modal');
