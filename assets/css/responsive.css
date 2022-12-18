@@ -78,7 +78,11 @@
     }
 
     .modal .modal-form {
-        width: 506px;
+        max-width: 506px;
+    }
+
+    #contact .contact-address {
+        width: 100%;
     }
 
     #contact .contact-form {
