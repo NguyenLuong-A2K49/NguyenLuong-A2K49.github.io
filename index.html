@@ -19,7 +19,7 @@
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a>
+                        <a href="#">
                             More
                             <i class="down-btn ti-angle-down"></i>
                         </a>
@@ -182,18 +182,18 @@
                             </div>
                         </div>
                         <div class="col col-2 contact-form">
-                        <form action="">
-                            <div class="row mar-lr-8">
-                                <div class="col col-2 form-box">
-                                    <input type="text" required placeholder="Name">
+                            <form action="">
+                                <div class="row mar-lr-8">
+                                    <div class="col col-2 form-box">
+                                        <input type="text" required placeholder="Name">
+                                    </div>
+                                    <div class="col col-2 form-box">
+                                        <input type="email" required placeholder="Email"> 
+                                    </div>
                                 </div>
-                                <div class="col col-2 form-box">
-                                    <input type="email" required placeholder="Email"> 
-                                </div>
-                            </div>
-                            <input type="text" class="contact-mess" required placeholder="Messenger">
-                            <input type="submit" class="submit-btn" value="SEND">
-                        </form>
+                                <input type="text" class="contact-mess" required placeholder="Messenger">
+                                <input type="submit" class="submit-btn" value="SEND">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -235,8 +235,14 @@
             };
 
             for (var navItem of navItemList) {
-                navItem.addEventListener('click', function() {
-                    header.style.height = null;
+                // console.log(navItem.nextElementSibling);
+                navItem.addEventListener('click', function(event) {
+                    var Check = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                    if (Check) {
+                        event.preventDefault();
+                    } else {
+                        header.style.height = null;
+                    }
                 });
             }
         </script>
